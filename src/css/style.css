@@ -16,15 +16,12 @@ body {
 --------------------------------------------------------------*/
 
 .header {
-    transition: all 0.5s;
-    z-index: 997;
-    padding: 20px 0;
-}
-
-.header.header-scrolled {
     background: #fff;
     padding: 15px 0;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 20px 0;
 }
 
 .header .logo {
@@ -220,15 +217,15 @@ body {
 
 .hero h1 {
     margin: 0;
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 64px;
+    font-weight: lighter;
     color: #012970;
 }
 
 .hero h2 {
     color: #444444;
     margin: 15px 0 0 0;
-    font-size: 26px;
+    font-size: 36px;
 }
 
 .hero .btn-get-started {
@@ -258,8 +255,8 @@ body {
     transform: translateX(5px);
 }
 
-.hero .hero-img {
-    text-align: right;
+.hero a {
+    text-decoration: none !important;
 }
 
 @media (min-width: 1024px) {
@@ -291,8 +288,5 @@ body {
     }
     .hero h2 {
         font-size: 24px;
-    }
-    .hero .hero-img img {
-        width: 100%;
     }
 }
