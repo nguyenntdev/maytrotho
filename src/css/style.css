@@ -220,6 +220,7 @@ body {
 .about .content {
     background-color: #ECEFF4;
     padding: 40px;
+    border-radius: 12px;
 }
 
 .about h3 {
@@ -238,4 +239,11 @@ body {
 .about p {
     margin: 15px 0 30px 0;
     line-height: 24px;
+}
+
+.about-img {
+    border-style: solid;
+    border-width: 12px;
+    border-color: #2E3440;
+    border-radius: 12px;
 }
