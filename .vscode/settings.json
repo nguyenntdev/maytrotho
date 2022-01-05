@@ -1,6 +1,3 @@
 {
-    "editor.cursorSmoothCaretAnimation": true,
-    "editor.smoothScrolling": true,
-    "workbench.list.smoothScrolling": true,
-    "files.autoSave": "onFocusChange"
+    "C_Cpp.errorSquiggles": "Disabled"
 }
