@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Inner Page - Presento Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #fafafa;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .update {
+            background-color: #005aa0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .update__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .update__spinner {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .update__text {
+            text-align: center;
+            color: #fbfdfd;
+            font-family: sans-serif;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        
+        .update__loader {
+            height: 50px;
+            width: 50px;
+            margin: 20px;
+        }
+        
+        .update__spinner {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            position: absolute;
+            margin: 0;
+            animation-name: rotate;
+            animation-duration: 1.4s;
+            animation-timing-function: cubic-bezier(0.05, 0.57, 0.63, 0.38);
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+        
+        .update__spinner--second {
+            animation-delay: 0.2s;
+        }
+        
+        .update__spinner--third {
+            animation-delay: 0.4s;
+        }
+        
+        .update__spinner--four {
+            animation-delay: 0.6s;
+        }
+        
+        .update__spinner--five {
+            animation-delay: 0.8s;
+        }
+        
+        .update__spinner--six {
+            animation-delay: 1s;
+        }
+        
+        .spinner__point {
+            width: 7px;
+            height: 7px;
+            border-radius: 10px;
+            background-color: white
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0.7turn)
+            }
+            100% {
+                transform: rotate(1.7turn)
+            }
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        a:clicked {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="update">
+        <div class="update__content">
+
+            <div class="update__loader">
+                <div class="update__spinner">
+                    <div class="spinner__point"></div>
+                </div>
+                <div class="update__spinner update__spinner--second">
+                    <div class="spinner__point"></div>
+                </div>
+                <div class="update__spinner update__spinner--third">
+                    <div class="spinner__point"></div>
+                </div>
+                <div class="update__spinner update__spinner--four">
+                    <div class="spinner__point"></div>
+                </div>
+                <div class="update__spinner update__spinner--five">
+                    <div class="spinner__point"></div>
+                </div>
+            </div>
+
+            <div class="update__text">
+                <p>Trang web này đang được bảo trì</p>
+                <p id="update__percentage">Đã hoàn tất 0%</p>
+                <p>Xin vui lòng quay lại vào lúc khác.</p>
+                <p style="font-family:'Courier New', Courier, monospace;"><a href="index.html">homepage</a> | <a href="https://dongduschool.edu.vn/">dong du school</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        //init percentage
+        let percentage = 0;
+        //init the current time
+        let currentTime;
+        //time of windows update in ms (default 5 min)
+        let time = 5000000;
+        //refresh interval of the percentage in ms (default 1 seconde)
+        let refresh = 1000;
+
+        //on windows load
+        window.onload = function() {
+            //get the begin current time
+            currentTime = time;
+            //start the loading
+            loading();
+        }
+
+        //infinite loop while the counter is not at zero
+        function loading() {
+            //calucl the percentage time
+            currentTime = currentTime - refresh;
+            percentage = ((time - currentTime) * 100) / time;
+
+            //display the percentage
+            document.querySelector('#update__percentage').innerHTML = parseInt(percentage) + '% complete';
+
+            //is the time isn't finish reload the function
+            if (currentTime != 0) {
+                setTimeout(loading, refresh);
+            }
+        }
+    </script>
+</body>
+
+</html>
